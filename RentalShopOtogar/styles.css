@@ -1,0 +1,239 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/background.jpg') no-repeat center center fixed; /* Arka plan görseli */
+    background-size: cover; /* Görsel boyutlandırma */
+    color: #333; /* Yazı rengini kontrast için düzenledik */
+}
+
+header {
+    background-color: #2c3e50;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+}
+
+.rental-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.rental-item {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 30%;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rental-item:hover {
+    transform: scale(1.05); /* Hover efekti ekledik */
+}
+
+.rental-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rental-image:hover {
+    transform: scale(1.1);
+}
+
+.details-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.details-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 70%;
+    max-width: 1200px; /* Ensure the modal doesn't exceed screen width */
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+/* Slideshow Styling */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.slide-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+    max-height: 500px; /* Ensure images don't exceed a reasonable size */
+    margin: 0 auto;
+}
+
+.slide-img:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    visibility: visible; /* Sol ve sağ ok butonları görünür olacak */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Rental Button */
+.rental-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+    width: 100%; /* Make button fit the width of the image */
+    text-align: center;
+}
+
+.rental-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .rental-item {
+        width: 45%;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+
+    .prev, .next {
+        font-size: 25px; /* Navigasyon oklarını daha büyük yaptık */
+    }
+
+    .slide-img {
+        max-height: 400px; /* Küçük ekranlarda slayt boyutlarını kısıtladık */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .rental-item {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .rental-btn {
+        width: auto;
+    }
+
+    .prev, .next {
+        font-size: 20px; /* Ekran küçük olduğunda buton boyutlarını küçülttük */
+    }
+
+    .slide-img {
+        max-height: 300px; /* Daha küçük ekranlarda görsel boyutlarını düşürdük */
+    }
+}
+
+/* Image Zoom on Hover (during scroll on modal) */
+.slide-img {
+    transition: transform 0.3s ease-in-out;
+    cursor: zoom-in;
+}
+
+.slide-img:hover {
+    transform: scale(1.1);
+}
